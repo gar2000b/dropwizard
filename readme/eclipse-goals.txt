@@ -1,0 +1,11 @@
+Add new run m2 maven configuration.
+Set base directory to project: ${workspace_loc:/dropwizard}
+Name goal: clean install execute dropwizard
+Add goals: clean install exec:java
+
+Other goals you may want to add:
+clean
+deploy
+install
+package
+test
