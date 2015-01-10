@@ -39,7 +39,7 @@ public class HelloWorldClient {
 		WebResource webResource = client
 				   .resource("http://localhost:9000/hello-world");
 		
-		String dataInput = "{\"id\": \"32\", \"content\": \"abc content\"}";
+		String dataInput = "{\"id\": \"32\", \"content\": \"abc def content\"}";
 		
 		ClientResponse response = webResource.type("application/json")
 				   .post(ClientResponse.class, dataInput);
