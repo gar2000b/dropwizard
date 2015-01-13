@@ -6,24 +6,24 @@ import java.util.regex.Pattern;
 import static java.util.regex.Pattern.compile;
 
 public class RandomDomainObject {
-	
+
 	private static final Pattern NINO = compile("^(\\w{9})(\\w{4})(\\w{5})$");
-	
+
 	private String nino;
 	private String forename;
 	private String surname;
-	
+
 	public static RandomDomainObject parse(String randomRecordString) {
 		Matcher randomMatcher = NINO.matcher(randomRecordString);
-		
-		if(randomMatcher.matches()) {
+
+		if (randomMatcher.matches()) {
 			RandomDomainObject randomDomainObject = new RandomDomainObject();
 			randomDomainObject.setNino(randomMatcher.group(1));
 			randomDomainObject.setForename(randomMatcher.group(2));
 			randomDomainObject.setSurname(randomMatcher.group(3));
 			return randomDomainObject;
 		}
-		
+
 		return null;
 	}
 

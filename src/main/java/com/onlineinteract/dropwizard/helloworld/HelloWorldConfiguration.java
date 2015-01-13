@@ -6,11 +6,11 @@ import org.hibernate.validator.constraints.NotEmpty;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class HelloWorldConfiguration extends Configuration{
+public class HelloWorldConfiguration extends Configuration {
 
 	@NotEmpty
 	private String template;
-	
+
 	@NotEmpty
 	private String defaultName = "Stranger";
 
@@ -33,6 +33,5 @@ public class HelloWorldConfiguration extends Configuration{
 	public void setDefaultName(String defaultName) {
 		this.defaultName = defaultName;
 	}
-	
-	
+
 }

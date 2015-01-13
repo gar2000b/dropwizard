@@ -27,18 +27,18 @@ public class HelloWorldResource {
 		this.defaultName = defaultName;
 		this.counter = new AtomicLong();
 	}
-	
+
 	@GET
 	@Timed
 	public Saying sayHello(@QueryParam("name") Optional<String> name) {
 		final String value = String.format(template, name.or(defaultName));
 		return new Saying(counter.incrementAndGet(), value);
 	}
-	
-	 @POST
-	 @Consumes(MediaType.APPLICATION_JSON)
-	 public Response receivePost(Saying saying) {
-		 System.out.println("Received a message: " + saying.getContent());
-		 return Response.status(201).entity(saying.getContent()).build();
-	 }
+
+	@POST
+	@Consumes(MediaType.APPLICATION_JSON)
+	public Response receivePost(Saying saying) {
+		System.out.println("Received a message: " + saying.getContent());
+		return Response.status(201).entity(saying.getContent()).build();
+	}
 }

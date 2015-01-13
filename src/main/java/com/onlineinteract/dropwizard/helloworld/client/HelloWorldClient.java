@@ -7,14 +7,15 @@ import com.sun.jersey.api.client.WebResource;
 
 public class HelloWorldClient {
 
-	public HelloWorldClient() {}
-	
+	public HelloWorldClient() {
+	}
+
 	public static void main(String[] args) {
 		HelloWorldClient helloWorldClient = new HelloWorldClient();
 		helloWorldClient.getRequest();
 		helloWorldClient.postRequest();
 	}
-	
+
 	public void getRequest() {
 		Client client = Client.create();
 		WebResource webResource = client
@@ -27,28 +28,28 @@ public class HelloWorldClient {
 			throw new RuntimeException("Failed : HTTP error code : "
 					+ response.getStatus());
 		}
-		
+
 		Saying saying = response.getEntity(Saying.class);
 		System.out.println("*** Id is " + saying.getId());
 		System.out.println("*** Content is " + saying.getContent());
 		System.out.println("*** Saying is " + saying);
 	}
-	
+
 	public void postRequest() {
 		Client client = Client.create();
 		WebResource webResource = client
-				   .resource("http://localhost:9000/hello-world");
-		
+				.resource("http://localhost:9000/hello-world");
+
 		String dataInput = "{\"id\": \"32\", \"content\": \"abc def content\"}";
-		
-		ClientResponse response = webResource.type("application/json")
-				   .post(ClientResponse.class, dataInput);
-		
+
+		ClientResponse response = webResource.type("application/json").post(
+				ClientResponse.class, dataInput);
+
 		if (response.getStatus() != 201) {
 			throw new RuntimeException("Failed : HTTP error code : "
-			     + response.getStatus());
+					+ response.getStatus());
 		}
-		
+
 		System.out.println("Output from Server ....");
 		String output = response.getEntity(String.class);
 		System.out.println(output);

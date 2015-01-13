@@ -9,8 +9,10 @@ public class RandomDomainObjectTest {
 	private static final String RECORD = "JG410825BGaryBlack";
 
 	@Test
-	public void shouldParseRandomRecordStringReturningRandomDomainObject() throws Exception {
-		RandomDomainObject randomDomainObject = RandomDomainObject.parse(RECORD);
+	public void shouldParseRandomRecordStringReturningRandomDomainObject()
+			throws Exception {
+		RandomDomainObject randomDomainObject = RandomDomainObject
+				.parse(RECORD);
 		assertEquals("JG410825B", randomDomainObject.getNino());
 		assertEquals("Gary", randomDomainObject.getForename());
 		assertEquals("Black", randomDomainObject.getSurname());
