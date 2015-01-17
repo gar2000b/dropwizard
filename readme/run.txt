@@ -6,3 +6,4 @@ Execute: mvn package
 Execute: java -jar target\dropwizard-0.0.1-SNAPSHOT.jar server hello-world.yml
 
 *Note: all the information for this project is at: http://dropwizard.io/getting-started.html
+
