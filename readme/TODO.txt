@@ -1,0 +1,4 @@
+TODO:
+Create JSON from a POJO. _/
+Create POJO from JSON (we do this automatically).
+^ http://www.mkyong.com/java/how-to-convert-java-object-to-from-json-jackson/
